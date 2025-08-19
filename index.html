@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site de blague</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      height: 100vh; /* occupe toute la hauteur de l'écran */
+      display: flex;
+      justify-content: center; /* centre horizontal */
+      align-items: center;     /* centre vertical */
+      margin: 0;
+      padding: 10px;
+    }
+    #text {
+      font-size: 6vw; /* taille qui s’adapte à l’écran */
+      max-width: 90%; /* éviter que ça dépasse sur petit écran */
+      color: #333;
+      font-weight: bold;
+      text-align: center;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+  <p id="text"></p>
+
+  <script>
+    const phrase = "Fuck you Djibrin";
+    const mots = phrase.split(" ");
+    let index = 0;
+
+    function afficherMot() {
+      if (index < mots.length) {
+        document.getElementById("text").innerHTML += mots[index] + " ";
+        index++;
+        setTimeout(afficherMot, 500);
+      }
+    }
+
+    afficherMot();
+  </script>
+</body>
+</html>
